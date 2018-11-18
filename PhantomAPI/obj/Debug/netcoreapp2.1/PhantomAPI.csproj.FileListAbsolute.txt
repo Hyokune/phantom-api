@@ -1,0 +1,14 @@
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\bin\Debug\netcoreapp2.1\PhantomAPI.deps.json
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\bin\Debug\netcoreapp2.1\PhantomAPI.runtimeconfig.json
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\bin\Debug\netcoreapp2.1\PhantomAPI.runtimeconfig.dev.json
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\bin\Debug\netcoreapp2.1\PhantomAPI.dll
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\obj\Debug\netcoreapp2.1\PhantomAPI.csprojAssemblyReference.cache
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\obj\Debug\netcoreapp2.1\PhantomAPI.csproj.CoreCompileInputs.cache
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\obj\Debug\netcoreapp2.1\PhantomAPI.RazorAssemblyInfo.cache
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\obj\Debug\netcoreapp2.1\PhantomAPI.RazorAssemblyInfo.cs
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\obj\Debug\netcoreapp2.1\PhantomAPI.AssemblyInfoInputs.cache
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\obj\Debug\netcoreapp2.1\PhantomAPI.AssemblyInfo.cs
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\obj\Debug\netcoreapp2.1\PhantomAPI.RazorTargetAssemblyInfo.cache
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\bin\Debug\netcoreapp2.1\PhantomAPI.pdb
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\obj\Debug\netcoreapp2.1\PhantomAPI.dll
+C:\Users\Hyuck Lee\Desktop\phantom-api\PhantomAPI\obj\Debug\netcoreapp2.1\PhantomAPI.pdb
