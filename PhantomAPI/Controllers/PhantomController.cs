@@ -121,5 +121,18 @@ namespace PhantomAPI.Helpers
         {
             return _context.PhantomThread.Any(e => e.Id == id);
         }
+
+        // GET: api/Phantom/UserThreads
+        [Route("userthreads")]
+        [HttpGet]
+        public async Task<List<string>> GetUserThreads()
+        {
+            var threads = (from m in _context.PhantomThread
+                         select m.User).Distinct();
+
+            var returned = await threads.ToListAsync();
+
+            return returned;
+        }
     }
 }

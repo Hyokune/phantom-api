@@ -14,5 +14,6 @@ namespace PhantomAPI.Models
         public string Width { get; set; }
         public string Height { get; set; }
         public string Content { get; set; }
+        public string User { get; set; }
     }
 }
