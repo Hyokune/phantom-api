@@ -129,7 +129,7 @@ namespace PhantomAPI.Helpers
         }
 
         // GET: api/Phantom/UserThreads
-        [Route("Threads/{user}")]
+        [Route("threads/{user}")]
         [HttpGet]
         public async Task<List<PhantomThread>> GetUserThreads([FromRoute] string user)
         {
@@ -143,7 +143,7 @@ namespace PhantomAPI.Helpers
         }
 
         // POST: api/Phantom/Upload
-        [HttpPost, Route("upload_{user}")]
+        [HttpPost, Route("upload/{user}")]
         public async Task<IActionResult> UploadFile([FromForm] PhantomThreadItem thread, [FromRoute] string user)
         {
             if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
