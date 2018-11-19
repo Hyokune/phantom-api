@@ -129,12 +129,13 @@ namespace PhantomAPI.Helpers
         }
 
         // GET: api/Phantom/UserThreads
-        [Route("userthreads")]
+        [Route("Threads/{user}")]
         [HttpGet]
-        public async Task<List<string>> GetUserThreads()
+        public async Task<List<PhantomThread>> GetUserThreads([FromRoute] string user)
         {
             var threads = (from m in _context.PhantomThread
-                         select m.User).Distinct();
+                           where user == m.User
+                           select m).Distinct();
 
             var returned = await threads.ToListAsync();
 
@@ -142,8 +143,8 @@ namespace PhantomAPI.Helpers
         }
 
         // POST: api/Phantom/Upload
-        [HttpPost, Route("upload")]
-        public async Task<IActionResult> UploadFile([FromForm]PhantomThreadItem thread)
+        [HttpPost, Route("upload_{user}")]
+        public async Task<IActionResult> UploadFile([FromForm] PhantomThreadItem thread, [FromRoute] string user)
         {
             if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
             {
@@ -163,7 +164,8 @@ namespace PhantomAPI.Helpers
 
                     PhantomThread phantomThread = new PhantomThread();
                     phantomThread.Title = thread.Title;
-                    phantomThread.User = "Hades";
+                    phantomThread.User = user;
+                    phantomThread.Content = thread.Content;
 
                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
                     phantomThread.Height = image.Height.ToString();
