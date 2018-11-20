@@ -128,7 +128,7 @@ namespace PhantomAPI.Helpers
             return _context.PhantomThread.Any(e => e.Id == id);
         }
 
-        // GET: api/Phantom/UserThreads
+        // GET: api/Phantom/threads/{user}
         [Route("threads/{user}")]
         [HttpGet]
         public async Task<List<PhantomThread>> GetUserThreads([FromRoute] string user)
@@ -141,6 +141,15 @@ namespace PhantomAPI.Helpers
 
             return returned;
         }
+
+        // GET: api/Phantom/threads/
+        [Route("threads")]
+        [HttpGet]
+        public IEnumerable<PhantomThread> GetUserThreads()
+        {
+            return _context.PhantomThread;
+        }
+
 
         // POST: api/Phantom/Upload
         [HttpPost, Route("upload/{user}")]
