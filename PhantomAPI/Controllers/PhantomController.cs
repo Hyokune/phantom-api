@@ -211,9 +211,9 @@ namespace PhantomAPI.Helpers
                 phantomThread.Content = thread.Content;
                 phantomThread.User = thread.User;
 
-                phantomThread.Height = "200";
-                phantomThread.Width = "200";
-                phantomThread.Url = "https://i.imgur.com/Fs9wzno.png";
+                phantomThread.Height = "";
+                phantomThread.Width = "";
+                phantomThread.Url = "";
                 phantomThread.Uploaded = DateTime.Now.ToString();
 
                 _context.PhantomThread.Add(phantomThread);
