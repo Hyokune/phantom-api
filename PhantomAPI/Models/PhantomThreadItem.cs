@@ -11,5 +11,6 @@ namespace PhantomAPI.Models
         public string Title { get; set; }
         public IFormFile Image { get; set; }
         public string Content { get; set; }
+        public string User { get; set; }
     }
 }

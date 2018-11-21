@@ -152,8 +152,8 @@ namespace PhantomAPI.Helpers
 
 
         // POST: api/Phantom/Upload
-        [HttpPost, Route("upload/{user}")]
-        public async Task<IActionResult> UploadFile([FromForm] PhantomThreadItem thread, [FromRoute] string user)
+        [HttpPost, Route("upload/")]
+        public async Task<IActionResult> UploadFile([FromForm] PhantomThreadItem thread)
         {
             if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
             {
@@ -173,8 +173,8 @@ namespace PhantomAPI.Helpers
 
                     PhantomThread phantomThread = new PhantomThread();
                     phantomThread.Title = thread.Title;
-                    phantomThread.User = user;
                     phantomThread.Content = thread.Content;
+                    phantomThread.User = thread.User;
 
                     System.Drawing.Image image = System.Drawing.Image.FromStream(stream);
                     phantomThread.Height = image.Height.ToString();
