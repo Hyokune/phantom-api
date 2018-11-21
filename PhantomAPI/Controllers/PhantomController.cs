@@ -196,6 +196,40 @@ namespace PhantomAPI.Helpers
 
         }
 
+        // POST: api/Phantom/Upload
+        [HttpPost, Route("upload/noimg")]
+        public async Task<IActionResult> UploadThread([FromForm] PhantomThreadItemText thread)
+        {
+            if (!MultipartRequestHelper.IsMultipartContentType(Request.ContentType))
+            {
+                return BadRequest($"Expected a multipart request, but got {Request.ContentType}");
+            }
+            try
+            {
+                PhantomThread phantomThread = new PhantomThread();
+                phantomThread.Title = thread.Title;
+                phantomThread.Content = thread.Content;
+                phantomThread.User = thread.User;
+
+                phantomThread.Height = "200";
+                phantomThread.Width = "200";
+                phantomThread.Url = "https://i.imgur.com/Fs9wzno.png";
+                phantomThread.Uploaded = DateTime.Now.ToString();
+
+                _context.PhantomThread.Add(phantomThread);
+                await _context.SaveChangesAsync();
+
+                return Ok($"File: {thread.Title} has successfully uploaded");
+                
+            }
+            catch (Exception ex)
+            {
+                return BadRequest($"An error has occured. Details: {ex.Message}");
+            }
+
+
+        }
+
         private async Task<CloudBlockBlob> UploadToBlob(string filename, byte[] imageBuffer = null, System.IO.Stream stream = null)
         {
 
