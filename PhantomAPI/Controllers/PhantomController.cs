@@ -180,8 +180,11 @@ namespace PhantomAPI.Helpers
                     phantomThread.Height = image.Height.ToString();
                     phantomThread.Width = image.Width.ToString();
                     phantomThread.Url = cloudBlock.SnapshotQualifiedUri.AbsoluteUri;
+
                     System.Globalization.CultureInfo.CurrentCulture.ClearCachedData();
-                    phantomThread.Uploaded = DateTime.Now.ToString();
+                    var myTimeZone = TimeZoneInfo.FindSystemTimeZoneById("New Zealand Standard Time");
+                    var currentDateTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, myTimeZone);
+                    phantomThread.Uploaded = currentDateTime.ToString();
 
                     _context.PhantomThread.Add(phantomThread);
                     await _context.SaveChangesAsync();
@@ -215,8 +218,12 @@ namespace PhantomAPI.Helpers
                 phantomThread.Height = "";
                 phantomThread.Width = "";
                 phantomThread.Url = "";
+
+
                 System.Globalization.CultureInfo.CurrentCulture.ClearCachedData();
-                phantomThread.Uploaded = DateTime.Now.ToString();
+                var myTimeZone = TimeZoneInfo.FindSystemTimeZoneById("New Zealand Standard Time");
+                var currentDateTime = TimeZoneInfo.ConvertTimeFromUtc(DateTime.UtcNow, myTimeZone);
+                phantomThread.Uploaded = currentDateTime.ToString();
 
                 _context.PhantomThread.Add(phantomThread);
                 await _context.SaveChangesAsync();
